@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your todo" id="todo">
+    <input type="text" placeholder="Enter your todo description" id="todoDescription">
+    <button onclick="addTodo()">Todo</button>
+    <div id="show"></div>
+    <script>
+        var foodObj = {
+            nameOfFood : "Rice",
+            classOfFood : "Cereal",
+            color : "Brownish white",
+            variety : "Jollof",
+            eat (){
+                console.log(`I will eat ${this.nameOfFood}`);
+            },
+            all (){
+                console.log(`I will eat ${this.nameOfFood} which is a ${this.classOfFood} and the color is ${this.color} while the variety is ${this.variety}`);
+            },
+        }
+        // console.log(foodObj.nameOfFood);
+        foodObj.eat()
+        foodObj.all()
+        console.log(foodObj('color'));
+
+
+        function addTodo() {
+            // console.log("I am todo, I did not live in the zoo,todo,todo");
+            // console.log(todo.value,);
+            var todoObj = {
+                myTodo: todo.value,
+                myDescription: todoDescription.value,
+                show(){
+                    show.innerHTML = `You just added ${this.myTodo} and ${this.myDescription}`
+        
+                }
+            } 
+            if (todo.value != "" && todoDescription != "") {
+                console.log(todoObj);
+                todoObj.show()
+                todoArr.push(todoObj)
+            } else{
+                console.log("Ah ah now, shey you dey whine me");
+            }
+        }
+    </script>
+</body>
+</html>

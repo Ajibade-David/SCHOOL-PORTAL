@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sayStudent('Tola' ,700, true)">Tola</button>
+    <button onclick="sayStudent('David',699, true)">David</button>
+    <button onclick="sayStudent('Victor',701, false)">Victor</button>
+    <button onclick="sayStudent('Tolu'),1000, true">Tolu</button>
+    <script>
+     function sayStudent(ourNames,age,isSingle) {
+        console.log(`Hello ${ourNames}, my age is ${age} and my singleness status is ${isSingle}`);
+     }
+    </script>
+</body>
+</html>

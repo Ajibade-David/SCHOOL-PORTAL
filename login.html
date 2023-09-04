@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css"
+    />
+    <script
+      defer
+      src="/bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js"
+    ></script>
+  </head>
+
+  <body class="bg-body-tertiary">
+    <div class="container col-lg-7 col-md-7 col-11 shadow-sm mt-lg-5 mt-3">
+      <div class="row">
+        <h2 class="text-center text-success text-decoration-underline">
+          School Portal
+        </h2>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your First name"
+            id="firstName"
+          />
+          <label for="firstName" class="ms-3">Enter your First name</label>
+        </div>
+        <div class="form-floating mt-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your Last name"
+            id="lastName"
+          />
+          <label for="lastName" class="ms-3">Enter your Last name</label>
+        </div>
+        <div class="form-floating mt-3">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter your email"
+            id="studentEmail"
+          />
+          <label for="studentEmail" class="ms-3">Enter your email</label>
+        </div>
+        <div class="form-floating mt-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter your Phone number"
+            id="phoneNumber"
+          />
+          <label for="phoneNumber" class="ms-3">Enter your Phone Number</label>
+        </div>
+        <div class="my-2 py-2">
+          <button class="btn btn-dark w-100 py-2" onclick="addStudent()">
+            Submit
+          </button>
+          <div
+            class="alert alert-danger my-2 text-center py-2"
+            id="showEmptyErrorMessage"
+            style="display: none"
+          >
+            Please fill in the spaces
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid my-4 shadow-sm col-lg-7 col-md-7 col-11">
+      <h1 class="text-center alert alert-danger my-2" id="noStudentRegistered">
+        No student has registered
+      </h1>
+      <table
+        id="studentTable"
+        class="table table-success table-striped table-bordered"
+      ></table>
+    </div>
+    <div class="container-fluid" id="allButtons" style="display: none">
+      <div class="row">
+        <button
+          onclick="deleteFirstItem()"
+          class="btn btn-dark col-lg-1 col-md-2 col-5 my-2 mx-auto"
+        >
+          Delete First Item
+        </button>
+        <button
+          onclick="deleteLastItem()"
+          class="btn btn-success col-lg-1 col-lg-1 col-md-2 col-5 my-2 mx-auto mx-auto"
+        >
+          Delete last item
+        </button>
+        <button
+          onclick="deleteSpecificItem()"
+          class="btn btn-warning col-lg-1 col-md-2 col-5 my-2 mx-auto"
+        >
+          Delete any item(s)
+        </button>
+        <button
+          onclick="addStart()"
+          class="btn btn-primary col-lg-1 col-md-2 col-5 my-2 mx-auto"
+        >
+          Add item to start
+        </button>
+        <button
+          class="btn btn-info col-lg-1 col-md-2 col-5 my-2 mx-auto"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Edit item
+        </button>
+        <button
+          onclick="deleteAll()"
+          class="btn btn-secondary col-lg-1 col-md-2 col-5 my-2 mx-auto"
+        >
+          Delete all items
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Students</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+            class="alert alert-danger my-2 text-center py-2"
+            id="showErrorMessage"
+            style="display: block"
+          >
+            Please fill in the spaces
+          </div>
+            <input
+              type="number"
+              class="form-control my-2"
+              placeholder="Enter the number you will like to delete from"
+              id="editedIndex"
+            />
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="Enter the First value"
+              id="editedFirstName"
+            />
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="Enter the  last Name"
+              id="editedLastName"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+              onclick="editStudent()">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/login.js"></script>
+  </body>
+</html>
